@@ -160,7 +160,6 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				4AAA5D4E3A831E0E2EB12E7B /* [CP] Embed Pods Frameworks */,
 				AEE78C9F39760B207528DAD2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -183,7 +182,6 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				E3A6CA764F94525655D48622 /* [CP] Embed Pods Frameworks */,
 				0EB7DDD1564C537047244010 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -282,23 +280,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-navegacionApp/Pods-navegacionApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4AAA5D4E3A831E0E2EB12E7B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-navegacionApp-navegacionAppTests/Pods-navegacionApp-navegacionAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-navegacionApp-navegacionAppTests/Pods-navegacionApp-navegacionAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-navegacionApp-navegacionAppTests/Pods-navegacionApp-navegacionAppTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		631BBBE1B138EE2DB25DDD5F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,23 +339,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-navegacionApp-navegacionAppTests/Pods-navegacionApp-navegacionAppTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E3A6CA764F94525655D48622 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-navegacionApp/Pods-navegacionApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-navegacionApp/Pods-navegacionApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-navegacionApp/Pods-navegacionApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
