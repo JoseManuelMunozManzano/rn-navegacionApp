@@ -6,8 +6,20 @@ import {Pagina1Screen} from '../screens/Pagina1Screen';
 import {Pagina2Screen} from '../screens/Pagina2Screen';
 import {Pagina3Screen} from '../screens/Pagina3Screen';
 import {PersonaScreen} from '../screens/PersonaScreen';
+import {PersonaScreenFormaBuena} from '../screens/PersonaScreenFormaBuena';
 
-const Stack = createStackNavigator();
+// La forma buena de mandar argumentos es definirlo aquí
+// Además, Pagina1Screen, ... seran los name permitidos en los Stack.Screen
+export type RootStackParams = {
+  Pagina1Screen: undefined;
+  Pagina2Screen: undefined;
+  Pagina3Screen: undefined;
+  // PersonaScreen tiene definidos argumentos de forma "fea" en su fuente PersonaScreen.tsx
+  PersonaScreen: undefined;
+  PersonaScreenFormaBuena: {id: number; nombre: string};
+};
+
+const Stack = createStackNavigator<RootStackParams>();
 
 export const StackNavigator = () => {
   return (
@@ -46,6 +58,12 @@ export const StackNavigator = () => {
         name="PersonaScreen"
         options={{title: 'Persona'}}
         component={PersonaScreen}
+      />
+
+      <Stack.Screen
+        name="PersonaScreenFormaBuena"
+        options={{title: 'Persona'}}
+        component={PersonaScreenFormaBuena}
       />
     </Stack.Navigator>
   );

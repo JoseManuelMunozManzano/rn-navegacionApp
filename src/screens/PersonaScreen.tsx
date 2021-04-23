@@ -1,8 +1,18 @@
 import React, {useEffect} from 'react';
 import {Text, View} from 'react-native';
-import {StackScreenProps} from '@react-navigation/stack';
+import {
+  StackNavigationOptions,
+  StackScreenProps,
+} from '@react-navigation/stack';
 
 import {styles} from '../theme/appTheme';
+
+// Forma 1 de colocar tipo de datos de argumentos. La fácil
+// Hacemos una interface con los parámetros que esperamos
+interface RouterParams {
+  id: number;
+  nombre: string;
+}
 
 // Forma "fea" de recibir parámetros
 interface Props extends StackScreenProps<any, any> {}
@@ -13,7 +23,7 @@ export const PersonaScreen = ({route, navigation}: Props) => {
 
   // En la forma "fea" en route tengo la propiedad params con mis parámetros
   // Es feo porque no tengo los tipos de los parámetros, no se si vienen realmente o no
-  const params = route.params!;
+  const params = route.params as RouterParams;
 
   useEffect(() => {
     const options: StackNavigationOptions = {
