@@ -10,10 +10,37 @@ const Stack = createStackNavigator();
 
 export const StackNavigator = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Pagina1Screen" component={Pagina1Screen} />
-      <Stack.Screen name="Pagina2Screen" component={Pagina2Screen} />
-      <Stack.Screen name="Pagina3Screen" component={Pagina3Screen} />
+    <Stack.Navigator
+      // initialRouteName="Pagina2Screen"
+      // Estilizado de todas las pantallas
+      screenOptions={{
+        // headerShown: false,
+        headerStyle: {
+          // quita la línea de separación del header para android
+          elevation: 0,
+          // quita la línea de separación del header para ios
+          shadowColor: 'transparent',
+        },
+        cardStyle: {
+          backgroundColor: 'white',
+        },
+      }}>
+      {/* Nombre que aparecerá en cada ruta con options */}
+      <Stack.Screen
+        name="Pagina1Screen"
+        options={{title: 'Página 1'}}
+        component={Pagina1Screen}
+      />
+      <Stack.Screen
+        name="Pagina2Screen"
+        options={{title: 'Página 2'}}
+        component={Pagina2Screen}
+      />
+      <Stack.Screen
+        name="Pagina3Screen"
+        options={{title: 'Página 3'}}
+        component={Pagina3Screen}
+      />
     </Stack.Navigator>
   );
 };
