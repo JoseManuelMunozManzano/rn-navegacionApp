@@ -1,13 +1,39 @@
-import React from 'react';
-import {Button, Text, View, TouchableOpacity} from 'react-native';
-import {StackScreenProps} from '@react-navigation/stack';
+import React, {useEffect} from 'react';
+import {
+  Button,
+  Text,
+  View,
+  TouchableOpacity,
+  useWindowDimensions,
+} from 'react-native';
+// import {StackScreenProps} from '@react-navigation/stack';
+import {DrawerScreenProps} from '@react-navigation/drawer';
+
 import {styles} from '../theme/appTheme';
 
-interface Props extends StackScreenProps<any, any> {}
+// interface Props extends StackScreenProps<any, any> {}
+// Para que funcione el toggleDrawer ahora tiene que tirar de DrawerScreenProps
+interface Props extends DrawerScreenProps<any, any> {}
 
 export const Pagina1Screen = ({navigation}: Props) => {
   // Acceso a navegación a través de props. Opción deseada.
   // Ver Pagina2Screen.tsx para ver el uso del hook useNavigation()
+
+  // Menú Hamburguesa. Se ve sólo si no se ve el drawer por defecto (ver MenuLateralBasico)
+  const {width, height} = useWindowDimensions();
+  useEffect(() => {
+    navigation.setOptions({
+      headerLeft: () =>
+        width <= height ? (
+          <Button
+            title="Menú"
+            onPress={() => {
+              navigation.toggleDrawer();
+            }}
+          />
+        ) : null,
+    });
+  }, [width]);
 
   return (
     <View style={styles.globalMargin}>
