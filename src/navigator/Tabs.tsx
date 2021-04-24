@@ -1,4 +1,5 @@
 import React from 'react';
+import {Text} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import {Tab1Screen} from '../screens/Tab1Screen';
@@ -28,10 +29,38 @@ export const Tabs = () => {
           borderTopWidth: 0,
           elevation: 0,
         },
-      }}>
+        labelStyle: {
+          fontSize: 15,
+        },
+      }}
+      // Segunda forma, recomendada, de poner iconos en forma global.
+      screenOptions={({route}) => ({
+        tabBarIcon: ({color, focused, size}) => {
+          let iconName: string;
+
+          switch (route.name) {
+            case 'Tab1Screen':
+              iconName = 'T1';
+              break;
+            case 'Tab2Screen':
+              iconName = 'T2';
+              break;
+            case 'StackNavigator':
+              iconName = 'St';
+              break;
+          }
+
+          return <Text style={{color}}>{iconName}</Text>;
+        },
+      })}>
       <Tab.Screen
         name="Tab1Screen"
-        options={{title: 'Tab1'}}
+        options={{
+          title: 'Tab1',
+          // Una forma de poner el icono para un screen en concreto, con el mismo color que en el padre.
+          // No es lo más aconsejable porque se hace difícil de leer si se hace muy grande el código
+          // tabBarIcon: props => <Text style={{color: props.color}}>T1</Text>,
+        }}
         component={Tab1Screen}
       />
       <Tab.Screen
