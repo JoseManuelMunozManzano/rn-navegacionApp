@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   globalMargin: {
@@ -21,5 +21,14 @@ export const styles = StyleSheet.create({
     color: 'white',
     fontSize: 15,
     fontWeight: 'bold',
+  },
+  avatarContainer: {
+    alignItems: 'center',
+    marginTop: Platform.OS === 'ios' ? 15 : 10,
+  },
+  avatar: {
+    width: 150,
+    height: 150,
+    borderRadius: 100,
   },
 });
