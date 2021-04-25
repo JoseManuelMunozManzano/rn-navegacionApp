@@ -4,10 +4,11 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 
 import {Tab1Screen} from '../screens/Tab1Screen';
-import {Tab2Screen} from '../screens/Tab2Screen';
+// import {Tab2Screen} from '../screens/Tab2Screen';
 // import {Tab3Screen} from '../screens/Tab3Screen';
 import {StackNavigator} from './StackNavigator';
 import {colores} from '../theme/appTheme';
+import {TopTabsNavigator} from './TopTabNavigator';
 
 type RootTabParams = {
   Tab1Screen: undefined;
@@ -55,7 +56,7 @@ const TabsAndroid = () => {
       <BottomTabAndroid.Screen
         name="Tab2Screen"
         options={{title: 'Tab2'}}
-        component={Tab2Screen}
+        component={TopTabsNavigator}
       />
       <BottomTabAndroid.Screen
         name="StackNavigator"
@@ -118,7 +119,7 @@ const TabsIOS = () => {
       <BottomTabIOS.Screen
         name="Tab2Screen"
         options={{title: 'Tab2'}}
-        component={Tab2Screen}
+        component={TopTabsNavigator}
       />
       <BottomTabIOS.Screen
         name="StackNavigator"
