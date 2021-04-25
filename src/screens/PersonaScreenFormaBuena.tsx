@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {Text, View} from 'react-native';
 import {
   StackNavigationOptions,
@@ -6,6 +6,7 @@ import {
 } from '@react-navigation/stack';
 
 import {RootStackParams} from '../navigator/StackNavigator';
+import {AuthContext} from '../context/AuthContext';
 import {styles} from '../theme/appTheme';
 
 // Forma "buena" de recibir parámetros.
@@ -14,6 +15,8 @@ interface Props
   extends StackScreenProps<RootStackParams, 'PersonaScreenFormaBuena'> {}
 
 export const PersonaScreenFormaBuena = ({route, navigation}: Props) => {
+  const {changeUsername} = useContext(AuthContext);
+
   // Recibir parámetros
   // Ahora, params si tiene los tipos!! Ayuda mucho en la legibilidad del código
   const params = route.params;
@@ -24,6 +27,10 @@ export const PersonaScreenFormaBuena = ({route, navigation}: Props) => {
     };
 
     navigation.setOptions(options);
+  }, []);
+
+  useEffect(() => {
+    changeUsername(params.nombre);
   }, []);
 
   return (

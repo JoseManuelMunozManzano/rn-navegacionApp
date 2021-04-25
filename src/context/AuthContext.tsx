@@ -22,6 +22,7 @@ export interface AuthContextProps {
   signIn: () => void;
   logout: () => void;
   changeFavoriteIcon: (iconName: string) => void;
+  changeUsername: (username: string) => void;
 }
 
 // Crear el contexto
@@ -35,12 +36,16 @@ export const AuthProvider = ({children}: any) => {
     dispatch({type: 'signIn'});
   };
 
+  const logout = () => {
+    dispatch({type: 'logout'});
+  };
+
   const changeFavoriteIcon = (iconName: string) => {
     dispatch({type: 'changeFavIcon', payload: iconName});
   };
 
-  const logout = () => {
-    dispatch({type: 'logout'});
+  const changeUsername = (username: string) => {
+    dispatch({type: 'changeUsername', payload: username});
   };
 
   return (
@@ -50,6 +55,7 @@ export const AuthProvider = ({children}: any) => {
         signIn,
         logout,
         changeFavoriteIcon,
+        changeUsername,
       }}>
       {/* Aquí van los hijos, que vienen en los props */}
       {children}

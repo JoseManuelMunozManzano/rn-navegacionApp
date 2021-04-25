@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {Text, View} from 'react-native';
 import {
   StackNavigationOptions,
@@ -6,6 +6,7 @@ import {
 } from '@react-navigation/stack';
 
 import {styles} from '../theme/appTheme';
+import {AuthContext} from '../context/AuthContext';
 
 // Forma 1 de colocar tipo de datos de argumentos. La fácil
 // Hacemos una interface con los parámetros que esperamos
@@ -18,6 +19,8 @@ interface RouterParams {
 interface Props extends StackScreenProps<any, any> {}
 
 export const PersonaScreen = ({route, navigation}: Props) => {
+  const {changeUsername} = useContext(AuthContext);
+
   // Recibir parámetros
   // console.log(JSON.stringify(props, null, 3));
 
@@ -31,6 +34,10 @@ export const PersonaScreen = ({route, navigation}: Props) => {
     };
 
     navigation.setOptions(options);
+  }, []);
+
+  useEffect(() => {
+    changeUsername(params.nombre);
   }, []);
 
   return (
