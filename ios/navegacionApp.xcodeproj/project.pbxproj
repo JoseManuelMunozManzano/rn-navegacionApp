@@ -39,6 +39,7 @@
 		42A51A1DFC369ED56F252656 /* libPods-navegacionApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-navegacionApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = navegacionApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B71D6F7325FD6FABC569F9B0 /* Pods-navegacionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-navegacionApp.debug.xcconfig"; path = "Target Support Files/Pods-navegacionApp/Pods-navegacionApp.debug.xcconfig"; sourceTree = "<group>"; };
+		BE0D0FE42635367300E9035C /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		BFCA2520F245D71585074145 /* Pods-navegacionApp-navegacionAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-navegacionApp-navegacionAppTests.release.xcconfig"; path = "Target Support Files/Pods-navegacionApp-navegacionAppTests/Pods-navegacionApp-navegacionAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		BFD7668A82877CF01588FFA7 /* Pods-navegacionApp-navegacionAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-navegacionApp-navegacionAppTests.debug.xcconfig"; path = "Target Support Files/Pods-navegacionApp-navegacionAppTests/Pods-navegacionApp-navegacionAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D08DCBE34153F9695F45E6DE /* Pods-navegacionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-navegacionApp.release.xcconfig"; path = "Target Support Files/Pods-navegacionApp/Pods-navegacionApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +117,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				BE0D0FE32635363700E9035C /* Fonts */,
 				13B07FAE1A68108700A75B9A /* navegacionApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* navegacionAppTests */,
@@ -137,6 +139,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		BE0D0FE32635363700E9035C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BE0D0FE42635367300E9035C /* Ionicons.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		FF4B3963080281B1A51D1A47 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,7 +155,6 @@
 				BFD7668A82877CF01588FFA7 /* Pods-navegacionApp-navegacionAppTests.debug.xcconfig */,
 				BFCA2520F245D71585074145 /* Pods-navegacionApp-navegacionAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
