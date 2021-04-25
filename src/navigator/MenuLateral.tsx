@@ -12,6 +12,7 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import {SettingsScreen} from '../screens/SettingsScreen';
 import {styles} from '../theme/appTheme';
@@ -58,13 +59,19 @@ const MenuInterno = ({
         <TouchableOpacity
           style={styles.menuBoton}
           onPress={() => navigation.navigate('Tabs')}>
-          <Text style={styles.menuTexto}>Navegación</Text>
+          <View style={styles.menuOpcion}>
+            <Icon name="navigate-circle-outline" size={30} />
+            <Text style={styles.menuTexto}>Navegación</Text>
+          </View>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.menuBoton}
           onPress={() => navigation.navigate('SettingsScreen')}>
-          <Text style={styles.menuTexto}>Settings</Text>
+          <View style={styles.menuOpcion}>
+            <Icon name="settings-outline" size={30} />
+            <Text style={styles.menuTexto}>Settings</Text>
+          </View>
         </TouchableOpacity>
       </View>
     </DrawerContentScrollView>

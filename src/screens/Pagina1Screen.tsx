@@ -8,8 +8,9 @@ import {
 } from 'react-native';
 // import {StackScreenProps} from '@react-navigation/stack';
 import {DrawerScreenProps} from '@react-navigation/drawer';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-import {styles} from '../theme/appTheme';
+import {colores, styles} from '../theme/appTheme';
 
 // interface Props extends StackScreenProps<any, any> {}
 // Para que funcione el toggleDrawer ahora tiene que tirar de DrawerScreenProps
@@ -25,12 +26,19 @@ export const Pagina1Screen = ({navigation}: Props) => {
     navigation.setOptions({
       headerLeft: () =>
         width <= height ? (
-          <Button
-            title="Menú"
+          // <Button
+          //   title="Menú"
+          //   onPress={() => {
+          //     navigation.toggleDrawer();
+          //   }}
+          // />
+          <TouchableOpacity
+            style={styles.menuHamburgesa}
             onPress={() => {
               navigation.toggleDrawer();
-            }}
-          />
+            }}>
+            <Icon name="ios-menu" size={30} color={colores.primary} />
+          </TouchableOpacity>
         ) : null,
     });
   }, [width]);
@@ -57,6 +65,7 @@ export const Pagina1Screen = ({navigation}: Props) => {
               nombre: 'Adriana',
             })
           }>
+          <Icon name="cafe-outline" size={20} color="white" />
           <Text style={styles.botonGrandeTexto}>Adriana</Text>
         </TouchableOpacity>
 
@@ -68,6 +77,7 @@ export const Pagina1Screen = ({navigation}: Props) => {
               nombre: 'José Manuel',
             })
           }>
+          <Icon name="save-outline" size={20} color="white" />
           <Text style={styles.botonGrandeTexto}>José Manuel</Text>
         </TouchableOpacity>
       </View>

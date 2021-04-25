@@ -2,6 +2,7 @@ import React from 'react';
 import {Platform, Text} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import {Tab1Screen} from '../screens/Tab1Screen';
 // import {Tab2Screen} from '../screens/Tab2Screen';
@@ -30,20 +31,23 @@ const TabsAndroid = () => {
       screenOptions={({route}) => ({
         tabBarIcon: ({color, focused}) => {
           let iconName: string;
-
           switch (route.name) {
             case 'Tab1Screen':
-              iconName = 'T1';
+              iconName = focused ? 'ios-moon' : 'ios-moon-outline';
               break;
             case 'Tab2Screen':
-              iconName = 'T2';
+              iconName = focused ? 'ios-aperture' : 'ios-aperture-outline';
               break;
             case 'StackNavigator':
-              iconName = 'St';
+              iconName = focused ? 'apps' : 'apps-outline';
               break;
           }
 
-          return <Text style={{color}}>{iconName}</Text>;
+          return (
+            <Text>
+              <Icon name={iconName} size={20} color={color} />
+            </Text>
+          );
         },
       })}>
       <BottomTabAndroid.Screen
@@ -93,17 +97,21 @@ const TabsIOS = () => {
 
           switch (route.name) {
             case 'Tab1Screen':
-              iconName = 'T1';
+              iconName = focused ? 'ios-moon' : 'ios-moon-outline';
               break;
             case 'Tab2Screen':
-              iconName = 'T2';
+              iconName = focused ? 'ios-aperture' : 'ios-aperture-outline';
               break;
             case 'StackNavigator':
-              iconName = 'St';
+              iconName = focused ? 'apps' : 'apps-outline';
               break;
           }
 
-          return <Text style={{color}}>{iconName}</Text>;
+          return (
+            <Text>
+              <Icon name={iconName} size={size} color={color} />
+            </Text>
+          );
         },
       })}>
       <BottomTabIOS.Screen

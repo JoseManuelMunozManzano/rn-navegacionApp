@@ -12,6 +12,10 @@ export const styles = StyleSheet.create({
     fontSize: 30,
     marginBottom: 10,
   },
+  menuHamburgesa: {
+    alignItems: 'center',
+    marginLeft: 10,
+  },
   botonGrande: {
     width: 100,
     height: 100,
@@ -42,7 +46,12 @@ export const styles = StyleSheet.create({
   menuBoton: {
     marginVertical: 5,
   },
+  menuOpcion: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   menuTexto: {
+    marginLeft: 10,
     fontSize: 20,
   },
 });
